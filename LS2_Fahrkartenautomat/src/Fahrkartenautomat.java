@@ -34,7 +34,7 @@ public class Fahrkartenautomat {
 			eingezahlterGesamtbetrag = eingezahlterGesamtbetrag + eingeworfeneMuenze;
 		}
 
-		// Rückgeldberechnung und -ausgabe
+		// Rückgeldberechnung und -ausgabe 
 		System.out.println("\nFahrschein wird ausgegeben");
 		for (int i = 0; i < 8; i++) {
 			System.out.print("=");
