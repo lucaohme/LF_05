@@ -46,8 +46,9 @@ public class Fahrkartenautomat {
 		}
 		System.out.println("\n\n");
 
-		// Geldeinwurf
 		rueckgabebetrag = eingezahlterGesamtbetrag - zuZahlenderBetrag;
+		
+		
 		if (rueckgabebetrag > 0.0) {
 			System.out.print("Der Rückgabebetrag in Höhe von ");
 			System.out.printf("%.2f", rueckgabebetrag);
@@ -60,7 +61,7 @@ public class Fahrkartenautomat {
 			}
 			while (rueckgabebetrag >= 1.0) { // 1-Euro-Münzen
 				System.out.println("1 Euro");
-				rueckgabebetrag = rueckgabebetrag - 1.0;
+				rueckgabebetrag = rueckgabebetrag - 1;
 			}
 			while (rueckgabebetrag >= 0.5) { // 50-Cent-Münzen
 				System.out.println("50 Cent");
@@ -74,9 +75,9 @@ public class Fahrkartenautomat {
 				System.out.println("10 Cent");
 				rueckgabebetrag = rueckgabebetrag - 0.1;
 			}
-			while (rueckgabebetrag >= 0.05) { // 5-Cent-Münzen
+			while (rueckgabebetrag >= 0.048) { // 5-Cent-Münzen
 				System.out.println("5 Cent");
-				rueckgabebetrag = rueckgabebetrag - 0.05;
+				rueckgabebetrag = rueckgabebetrag - 0.04;
 			}
 		}
 
