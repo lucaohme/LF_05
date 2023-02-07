@@ -3,6 +3,8 @@ import java.util.Scanner;
 public class Fahrkartenautomat {
 
 	public static void main(String[] args) {
+		
+		begruessung ();
 
 		Scanner tastatur = new Scanner(System.in);
 
@@ -13,25 +15,30 @@ public class Fahrkartenautomat {
 		double eingeworfeneMuenze;
 		double rueckgabebetrag;
 		double nochZuZahlen;
+		double gesamt = 0;
 		
 		
-		//Fahrkartenbestellvorgang
-		System.out.println("Fahrkartenbestellvorgang:");
-		System.out.println("=======================");
+		while (auswahl != 9) {
+		
 		System.out.println("\nWaehlen Sie ihre Wunschfahrkarte fuer Berlin AB aus:");
 		System.out.println("\tKurzstrecke AB \t\t[2,00 EUR]\t(1)");
 		System.out.println("\tEinzelfahrschein AB \t[3,00 EUR]\t(2)");
 		System.out.println("\tTageskarte AB \t\t[8,80 EUR]\t(3)");
 		System.out.println("\t4-Fahrten-Karte AB \t[9,40 EUR]\t(4)");
-
-		while (auswahl < 1 || auswahl > 5) {
+		System.out.println("\tBezahlen \t\t\t\t(9)");
+		
+		while (true) {
 			System.out.print("\nIhre Wahl: ");
 			auswahl = tastatur.nextInt();
 				if (auswahl < 1 || auswahl > 5) {
 					System.out.println(">>falsche Eingabe<<");
 				}
+				else {
+					break;
+				}
+				
 		}
-
+		
 		if (auswahl == 1) {
 			zuZahlenderBetrag = 2;
 		} else if (auswahl == 2) {
@@ -53,6 +60,7 @@ public class Fahrkartenautomat {
 		*/
 		
 		// Anzahl Tickets
+		
 		while (ticketanzahl < 1 || ticketanzahl > 10) {
 			System.out.print("Anzahl der Tickets: ");
 			ticketanzahl = tastatur.nextInt();
@@ -61,11 +69,11 @@ public class Fahrkartenautomat {
 			System.out.println("Wählen Sie bitte eine eine Anzahl von 1 bis 10 Tickets aus");
 			}
 		}
-		
-		
-		
 		zuZahlenderBetrag = ticketanzahl * zuZahlenderBetrag;
-
+		gesamt = gesamt + zuZahlenderBetrag;
+		System.out.printf("\nZwischensumme: %.2f Euro\n", gesamt);
+	}
+		
 		// Geldeinwurf
 		eingezahlterGesamtbetrag = 0.0;
 		nochZuZahlen = 0.0;
@@ -126,6 +134,9 @@ public class Fahrkartenautomat {
 				+ "Wir wünschen Ihnen eine gute Fahrt.");
 
 		tastatur.close();
+	}
+	static void begruessung() {
+		System.out.println("Herzlich Willkommen!");
 	}
 }
 
